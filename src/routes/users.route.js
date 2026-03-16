@@ -1,7 +1,8 @@
-import { Router } from 'express';
-import userController from '../controllers/user.controller.js';
-const router = Router();
+import express from "express";
+import { listPagination } from "../controllers/user.controller.js";
 
-router.route('/').get(userController.getPrueba)
+const router = express.Router();
 
-export default router
+router.get("/list/pagination", listPagination);
+
+export default router;
